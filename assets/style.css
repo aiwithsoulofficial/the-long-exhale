@@ -853,3 +853,23 @@ body[data-theme="beach"] .kim-photo img { object-position: center 30%; }
 /* v8.2: house + place photo row */
 @media (min-width: 901px) { .house-thumbs { flex-wrap: nowrap; } .house-thumb { flex: 0 1 300px; } }
 @media (max-width: 900px) { .house-thumb:first-child:nth-last-child(3) { aspect-ratio: 16 / 9; } }
+
+/* v9 - hosts: Kim's letter stands alone, three host cards with circle portraits */
+.kim-grid.kim-solo { display: block !important; max-width: 720px; margin: 0 auto; }
+.hosts-block { margin-top: clamp(64px, 9vw, 120px); }
+.hosts-title { text-align: center; margin: 0 auto clamp(36px, 5vw, 56px); max-width: 18ch; }
+.hosts.hosts-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 44px); margin-top: 0; padding-top: 0; border-top: 0; }
+.hosts-3 .host { text-align: center; background: var(--shell); border-radius: 10px; padding: 34px 26px 30px; box-shadow: 0 10px 34px rgb(59 48 42 / .07); }
+.host-photo { width: 168px; margin: 0 auto 22px; }
+.host-photo img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center 35%; border-radius: 50%; display: block; }
+.host-role { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .75; margin: 0 0 6px; }
+.hosts-3 .host h3 { margin: 0 0 14px; }
+.hosts-3 .host p:last-child { font-size: 16px; line-height: 1.7; margin: 0; }
+@media (max-width: 900px) {
+  .hosts.hosts-3 { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
+  .host-photo { width: 148px; }
+}
+.hosts-3 .host { border: 0 !important; display: flex; flex-direction: column; align-items: center; }
+.hosts-3 .host .host-role { text-align: center; font-size: 12px; letter-spacing: .1em; min-height: 2.6em; display: flex; align-items: flex-end; justify-content: center; text-wrap: balance; }
+.hosts-3 .host p:last-child { text-align: left; }
+@media (max-width: 900px) { .hosts-3 .host .host-role { min-height: 0; } }
